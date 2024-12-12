@@ -380,8 +380,6 @@ var _hmt = _hmt || [];
 <p id="visitCountDisplay">欢迎访问本网站</p>
     <script>
         async function getVisitCountFromBaiduStats() {
-            // 这里假设通过某种方式（比如调用百度统计开放API，但实际需要按其文档进行认证等操作来实现）能获取到访问次数数据
-            // 以下只是模拟返回一个固定数字示例，真实情况不是这样获取哦
             return _hmt.push(['_trackPageview', '/index']);; 
         }
         
@@ -389,7 +387,7 @@ var _hmt = _hmt || [];
         async function updateVisitCountDisplay() {
             const visitCount = await getVisitCountFromBaiduStats();
             const displayElement = document.getElementById('visitCountDisplay');
-            displayElement.textContent = `您已经访问本网站 ${visitCount} 次啦！`;
+            displayElement.textContent = `您是第 ${visitCount} 位访问者`;
         }
         
         updateVisitCountDisplay();
