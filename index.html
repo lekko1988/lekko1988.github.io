@@ -214,6 +214,25 @@ var _hmt = _hmt || [];
           </a>
         </li>
 
+        <li>
+        <p id="visitCountDisplay">欢迎访问本网站</p>
+    <script>
+        async function getVisitCountFromBaiduStats() {
+            return _hmt.push(['_trackPageview', '/index']);; 
+        }
+        
+        // 调用函数获取访问次数并更新页面显示
+        async function updateVisitCountDisplay() {
+            const visitCount = await getVisitCountFromBaiduStats();
+            const displayElement = document.getElementById('visitCountDisplay');
+            displayElement.textContent = `您是第 ${visitCount} 位访问者`;
+        }
+        
+        updateVisitCountDisplay();
+    </script>
+        </li>
+
+
       
 
       <!--
@@ -377,21 +396,6 @@ var _hmt = _hmt || [];
 
 
 
-<p id="visitCountDisplay">欢迎访问本网站</p>
-    <script>
-        async function getVisitCountFromBaiduStats() {
-            return _hmt.push(['_trackPageview', '/index']);; 
-        }
-        
-        // 调用函数获取访问次数并更新页面显示
-        async function updateVisitCountDisplay() {
-            const visitCount = await getVisitCountFromBaiduStats();
-            const displayElement = document.getElementById('visitCountDisplay');
-            displayElement.textContent = `您是第 ${visitCount} 位访问者`;
-        }
-        
-        updateVisitCountDisplay();
-    </script>
 
 
 
